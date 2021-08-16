@@ -4,13 +4,13 @@ class DatabaseConnection
 {
     function getConnection() {
         
-        $servername = "localhost";
+        $servername = "z5zm8hebixwywy9d.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
         
-        $username = "root";
+        $username = "hydassi67brqr6xz";
         
-        $password = "";
+        $password = "x2oksfqgyajdcw9l";
         
-        $database = "activitydb";
+        $database = "fsu8e516wvoz7kvx";
         
         $conn = new mysqli($servername, $username, $password, $database);
         
