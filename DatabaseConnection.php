@@ -13,9 +13,6 @@ class DatabaseConnection
         $database = ltrim($dbparts['fsu8e516wvoz7kvx'],'/');
         
         
-        
-   
-        
         $conn = new mysqli($hostname, $username, $password, $database);
         
         if ($conn->connect_error) {
