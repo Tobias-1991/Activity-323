@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once 'DatabaseConnection.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,10 +34,11 @@ require_once 'DatabaseConnection.php';
                     <h2 class="text-info">Registration</h2>
                     <p>Register for a User Account</p>
                 </div>
-                <form action='registrationHandler.php'>
-                    <div class="mb-3"><label class="form-label" for="name">Name</label><input class="form-control item" type="text" id="name"></div>
-                    <div class="mb-3"><label class="form-label" for="password">Password</label><input class="form-control item" type="password" id="password"></div>
-                    <div class="mb-3"><label class="form-label" for="username">Username</label><input class="form-control item" type="text" id="username"></div><button class="btn btn-primary" type="submit">Sign Up</button>
+                <form action='registrationHandler.php' method='POST'>
+                    <div class="mb-3"><label class="form-label" for="name">Name</label><input class="form-control item" type="text" id="name" name="name"></div>
+                    <div class="mb-3"><label class="form-label" for="password">Password</label><input class="form-control item" type="password" id="password" name="password"></div>
+                    <div class="mb-3"><label class="form-label" for="username">Username</label><input class="form-control item" type="text" id="username" name="username"></div>
+                    <button class="btn btn-primary" type="submit">Sign Up</button>
                 </form>
             </div>
         </section>

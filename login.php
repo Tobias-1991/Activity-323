@@ -34,11 +34,10 @@ session_start();
                     <h2 class="text-info">Log In</h2>
                     <p>Enter Your Credentials</p>
                 </div>
-                <form action='loginHandler.php'>
+                <form action='DatabaseConnection.php'>
                     <div class="mb-3"><label class="form-label" for="username">Username</label><input class="form-control item" type="text" id="username"></div>
                     <div class="mb-3"><label class="form-label" for="password">Password</label><input class="form-control" type="password" id="password"></div>
                     <div class="mb-3">
-                        
                     </div><button class="btn btn-primary" type="submit">Log In</button>
                 </form>
             </div>

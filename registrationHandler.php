@@ -1,31 +1,28 @@
 <?php
-session_start();
-require_once 'DatabaseConnection.php';
-    
-    function registerUser() {
-        $name = $_SESSION['name'];
-        $username = $_SESSION['username'];
-        $password = $_SESSION['password'];
-        
-        if (!empty($name) || !empty($username) || !empty($password)) {
-            
-            $dbConnect = new DatabaseConnection();
-            
-            $db = $dbConnect->getConnection();
-            
-        } else {
-            echo "All fields are required";
-            die();
-        }
-        
-        $stmt = new $db->prepare("INSERT INTO users
-    (NAME, USER_NAME, PASSWORD) VALUES (?, ?, ?)");
-        $stmt ->bind_param('s', $_POST['username']);
-        $stmt->execute();
-        $result = $stmt->get_results();
-        $user = $result->fetch_object();
-        
-        return $user;
-    }
-require_once 'index.php';
+$servername = "localhost:3307";
+$username = "root";
+$password = "root";
+$dbname = "activitydb";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$name = $_POST["name"];
+$pass = $_POST["password"];
+$user = $_POST["username"];
+
+$sql = "INSERT INTO users (USER_NAME, PASSWORD, NAME)
+VALUES ('$user', '$pass', '$name')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+require 'index.php';
 ?>

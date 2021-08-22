@@ -2,7 +2,7 @@
 
 session_start();
 require_once 'DatabaseConnection.php';
-
+require_once 'connectionTest.php';
 if (! empty($_POST ) ) {
     if (isset( $_POST['username'] ) && isset($_POST['password' ] ) ) {
         
